@@ -3,28 +3,16 @@ title: "안드로이드 http 프로토콜 접속 시 예외발생 조치 "
 date: 2020-02-08 12:19:28 -0400
 categories: jekyll update
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+안드로이드9(APL Lv 28) 부터 강화된 네트워크 보안정책으로 추가적인 조치가 필요하다 
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-​```xml
+1. AndroidManifest.xml 파일의 <application> 부분에 android:usesCleartextTraffic="true" 로 설정
+    
+2. networkSecurityConfig 파일을 생성하고, AndroidManifest 에 등록
 <?xml version="1.0" encoding="utf-8"?>
-
 <network-security-config>
-
     <domain-config cleartextTrafficPermitted="true">
-
-        <domain includeSubdomains="true">ebookfrenzy.com</domain>
-
+        <domain includeSubdomains="true">xxx.xxx.xxx.xxx</domain>
     </domain-config>
-
 </network-security-config>
-​```
 
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
